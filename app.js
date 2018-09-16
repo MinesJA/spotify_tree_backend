@@ -14,7 +14,7 @@ var cookieParser = require('cookie-parser');
 
 var client_id = process.env.client_id
 var client_secret = process.env.client_secret
-var redirect_uri = process_uri.env.redirect_uri
+var redirect_uri = process.env.redirect_uri
 var site_url = process.env.site_url
 
 var generateRandomString = function(length) {
