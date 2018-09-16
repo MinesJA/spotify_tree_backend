@@ -1,4 +1,10 @@
-require('dotenv').config();
+console.log("Client id is:", process.env.client_id)
+
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').load();
+}
+
+console.log("Now client id is:", process.env.client_id)
 
 var express = require('express'); // Express web server framework
 var request = require('request'); // "Request" library
@@ -6,9 +12,10 @@ var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
 
-// Need to finish setting up environment variables:
-// https://medium.com/made-by-munsters/managing-environment-variables-with-global-and-dotenv-gems-e87315157df1
-
+var client_id = process.env.client_id
+var client_secret = process.env.client_secret
+var redirect_uri = process_uri.env.redirect_uri
+var site_url = process.env.site_url
 
 var generateRandomString = function(length) {
   var text = '';
@@ -91,7 +98,7 @@ app.get('/callback', function(req, res) {
           console.log("In body: ", body);
         });
         // we can also pass the token to the browser to make requests from there
-        res.redirect('http://localhost:3000/#' +
+        res.redirect(`${site_url}#` +
           querystring.stringify({
             access_token: access_token,
             refresh_token: refresh_token
