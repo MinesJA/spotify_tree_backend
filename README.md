@@ -15,6 +15,9 @@ Utilizes Spotify's oAuth and requires that the user sign into their Spotify acco
 * [ReactJs](https://reactjs.org/)
 * [React D3 Tree](https://www.npmjs.com/package/react-d3-tree)
 
+## Hosting
+* [Heroku](https://heroku.com)
+
 ## Authors
 * [Jonathan Mines](https://github.com/MinesJA)
 
